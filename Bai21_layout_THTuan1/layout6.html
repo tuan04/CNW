@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #frame{
+            height: 500px;
+            width: 1000px;
+            border: 1px solid;
+            margin: 50px auto;
+        }
+        header{
+            height: 50px;
+            width: 100%;
+            border-bottom: 1px solid;
+        }
+        nav{
+            height: 30px;
+            width: 100%;
+            border-bottom: 1px solid;
+        }
+        #center{
+            height: 370px;
+            width: 100%;
+            border-bottom: 1px solid;
+        }
+        section{
+            position: relative;
+            float: left;
+            height: 100%;
+            width: 700px;
+            border-right: 1px solid;
+        }
+        #cenSection{
+            position: absolute;
+            top: 24px;
+            bottom: 24px;
+            left: 20px;
+            right: 20px;
+            height: 320px;
+            width: 658px;
+            border: 1px solid;
+        }
+        #art1{
+            height: 160px;
+            width: 658px;
+            border-bottom: 1px solid;
+        }
+        #art2{
+            height: 160px;
+            width: 658px;
+        }
+        aside{
+            float: right;
+            height: 100%;
+            width: 299px;
+        }
+        footer{
+            height: 50px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="frame">
+        <header>header</header>
+        <nav>nav</nav>
+        <div id="center">
+            <section>section
+                <div id="cenSection">
+                    <article id="art1">article1</article>
+                    <article id="art2">article2</article>
+                </div>
+            </section>
+            <aside>aside</aside>
+        </div>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>

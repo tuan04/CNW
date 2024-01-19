@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #frame{
+            background-color: rgb(126, 126, 248);
+            height: 700px;
+            width: 1000px;
+            border: 1px solid;
+            margin: 0 auto;
+        }
+        header{
+            height: 100px;
+            width: 100%;
+            border-bottom: 1px solid;
+        }
+        #center{
+            height: 500px;
+            width: 100%;
+            border-bottom: 1px solid;
+        }
+        nav{
+           float: left; 
+           height: 100%;
+           width: 250px;
+           border-right: 1px solid;
+        }
+        section{
+            position: relative;
+            float: left;
+            height: 100%;
+            width: 749px;
+        }
+        article{
+            background-color: antiquewhite;
+            position: absolute;
+            right: 25px;
+            left: 25px;
+            top: 30px;
+            bottom: 30px;
+            height: 440px;
+            width: 699px;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <div id="frame">
+        <header>header</header>
+        <div id="center">
+            <nav>nav</nav>
+            <section>section
+                <article>article</article>
+            </section>
+        </div>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>
