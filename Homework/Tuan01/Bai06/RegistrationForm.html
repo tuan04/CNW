@@ -9,6 +9,30 @@
             margin: 0 auto;
             height: 1000px;
             width: 800px;
+            background-color: rgb(153, 205, 253);
+            padding: 5px;
+        }
+        header{
+            height: 80px;
+            width: 300px;
+            margin: 0 auto;
+            border: 2px solid;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: bold;
+        }
+        #tren{
+            float: left;
+            height: 40px;
+        }
+        #duoi{
+            float: left;
+            height: 40px;
+        }
+        #content{
+            height: 810px;
+            width: 100%;
+            float: left;
         }
         table{
             margin: 0 auto;
@@ -22,60 +46,54 @@
 </head>
 <body>
     <div id="frame">
-        <h2 style="text-align: center;">Registration Form</h2>
-        <table>
-            <caption>Register your Jackson Electronics product here</caption>
-            <tr>
-                <td><label for="">First Name:</label></td>
-                <td>
-                    <input type="text">
-                    <label for="">Last Name:</label>
-                    <input type="text">
-                </td>
-    
-            </tr>
-            <tr>
-                <td><label for="">Address#1:</label></td>
-                <td><input type="text" style="width: 250px;"></td>
-            </tr>
-            <tr>
-                <td><label for="">Address#2:</label></td>
-                <td><input type="text" style="width: 250px;"></td>
-            </tr>
-            <tr>
-                <td><label for="">City:</label></td>
-                <td>
-                    <input type="text">
-                    <label for="">State: </label>
-                    <input type="text" style="width: 50px;">
-                    <label for="">Zip</label>
-                    <input type="text" style="width: 80px;">
-                </td> 
-            </tr>
-            <tr>
-                <td>Country:</td>
-                <td><input type="text" value="United States"></td>
-            </tr>
-        </table>
-        <hr>
-        <table>
-            <tr>
-                <td><label for="">Product:</label></td>
-                <td><select name="" id="">
-                    <option value="ScanMaster">ScanMaster</option>
-                </select></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><label for="">Date Purchased:</label></td>
-                <td><input type="text"></td>
-            </tr>
-            <tr>
-                <td><label for="">Serial#:</label></td>
-                <td><input type="text"></td>
-            </tr>
-        </table>
+        <header>
+            <div id="tren">
+                Jackson
+            </div>
+            <div id="duoi">
+                Electronics
+            </div>
+        </header>
+        <div id="content">
+            <h2 style="text-align: center;">Registration Form</h2>
+            <table>
+                <caption>Register your Jackson Electronics product here</caption>
+                <tr>
+                    <td><label for="">First Name:</label></td>
+                    <td>
+                        <input type="text">
+                        <label for="">Last Name:</label>
+                        <input type="text">
+                    </td>
+        
+                </tr>
+                <tr>
+                    <td><label for="">Address#1:</label></td>
+                    <td><input type="text" style="width: 250px;"></td>
+                </tr>
+                <tr>
+                    <td><label for="">Address#2:</label></td>
+                    <td><input type="text" style="width: 250px;"></td>
+                </tr>
+                <tr>
+                    <td><label for="">City:</label></td>
+                    <td>
+                        <input type="text">
+                        <label for="">State: </label>
+                        <input type="text" style="width: 50px;">
+                        <label for="">Zip</label>
+                        <input type="text" style="width: 80px;">
+                    </td> 
+                </tr>
+                <tr>
+                    <td colspan="2"><hr></td>
+                </tr>
+                <tr>
+                    <td>Country:</td>
+                    <td><input type="text" value="United States"></td>
+                </tr>
+            </table>
+        </div>
     </div>
 </body>
 </html>

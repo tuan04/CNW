@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        #khung {
+            height: 800px;
+            width: 1089px;
+            border: 1px solid;
+        }
+        
+        header {
+            height: 200px;
+            width: 1089px;
+            border-bottom: 1px solid;
+            position: relative;
+        }
+        
+        #nav {
+            float: left;
+            height: 50px;
+            width: 100%;
+            background-color: cornsilk;
+            border-bottom: 1px solid;
+        }
+        
+        #menu li {
+            line-height: 50px;
+            float: left;
+            height: 50px;
+            width: 150px;
+            text-indent: 30px;
+            list-style-type: none;
+            position: relative;
+        }
+        
+        #menu li #sub-menu li {
+            background-color: cornsilk;
+        }
+        
+        #menu li:hover #sub-menu li {
+            display: block;
+        }
+        
+        #menu #sub-menu li:hover {
+            background-color: darkgray;
+        }
+        
+        #sub-menu li {
+            float: none;
+            display: none;
+        }
+        
+        #menu li #sub-menu li #sub-menu li {
+            float: none;
+            display: none;
+        }
+        
+        #menu li #sub-menu li:hover #sub-menu li {
+            display: block;
+            left: 100px;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="khung">
+        <header><img src="../TH_menu/images/head.jpg" height="200px" width="1089px"></header>
+        <div id="nav">
+            <ul id="menu">
+                <li><a href="">Trang chủ</a></li>
+                <li><a href="">Di động</a>
+                    <ul id="sub-menu">
+                        <li><a href="">4G</a></li>
+                        <li><a href="">4G Dcom</a></li>
+                        <li><a href="">Di động trả sau</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Internet</a>
+                    <ul id="sub-menu">
+                        <li><a href="">Cáp quang</a></li>
+                        <li><a href="">Wifi</a></li>
+                        <li><a href="">Gói cước</a>
+                            <ul id="sub-menu">
+                                <li><a href="">180k/thang</a></li>
+                                <li><a href="">200k/thang</a></li>
+                                <li><a href="">230k/thang</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="">Sản phẩm</a></li>
+                <li><a href="">Hỗ trợ</a></li>
+            </ul>
+        </div>
+        <div id="center">
+
+        </div>
+    </div>
+</body>
+
+</html>
