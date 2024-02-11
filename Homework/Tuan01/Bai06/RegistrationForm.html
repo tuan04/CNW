@@ -5,50 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #frame{
-            height: 800px;
-            width: 900px;
-            background-color: rgb(153, 205, 253);
-            margin: 0 auto;
-            padding: 5px;
+        *{
+            margin: 0px auto;
+            padding: 0;
         }
-        header{
-            height: 80px;
+        .frame{
+            height: 620px;
+            width: 700px;
+            background-color: rgb(153,205,253);
+            position: relatives;
+        }
+        .h1{
+            height: 70px;
             width: 250px;
-            text-align: center;
-            border: 3px solid;
-            border-radius: 12px;
-            margin: 0 auto;
+            background-color: rgb(0,254,255);
+            border: 1px solid;
+            border-radius: 15px;
+            font-size: 27px;
+            box-shadow: 5px 5px 5px 5px rgb(92,110,122);
             font-weight: bold;
-            font-size: 30px;
-            background-color: rgb(0, 254, 255);
-            box-shadow: 6px 6px rgb(190, 190, 190);
+            text-align: center;
         }
-        #tren{
-            height: 38px;
-            border-bottom: 3px solid;
+        .tren{
+            border-bottom: 4px solid;
+            height: 33px;
         }
-        #duoi{
-            height: 38px;
+        .h2{
+            padding: 30px;
+            height: 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 21px;
+        }
+        footer{
+            position: absolute;
+            right: 670px;
         }
     </style>
 </head>
 <body>
-    <div id="frame">
-        <header>
-            <div id="tren">
-                Jackson
-            </div>
-            <div id="duoi">
-                Electronics
-            </div>
+    <div class="frame">
+        <header class="h1">
+            <div class="tren">Jackson</div>
+            <div class="duoi"> Electronics </div>
         </header>
-    <div id="content">
-        <h2 style="text-align: center;">Registration Form</h2>
-        <table>
-            <td>First nam: </td>
-        </table>
-    </div>
+        <header class="h2">Registration Form</header>
+        <div class="center">
+            <form action="">
+                <table>
+                    <caption>Register your Jackson Electronics product here</caption>
+                    <tr>
+                        <td style="padding-right: 80px;"><label for="">First Name:</label></td>
+                        <td><input type="text" style="width: 120px;"></td>
+                        <td><label for="">Last Name:</label> <input type="text" style="width: 110px;"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Address#1:</label></td>
+                        <td colspan="2"><input type="text" style="width: 210px;"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Address#2:</label></td>
+                        <td colspan="2"><input type="text" style="width: 210px;"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">City:</label></td>
+                        <td><input type="text"></td>
+                        <td><label for="">State:</label> <input type="text" style="width: 40px;"> <label for="">Zip:</label> <input type="text" style="width: 70px;"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Country:</label></td>
+                        <td style="padding-bottom: 10px;"><input type="text" value="United States"></td>
+                    </tr>
+                    <tr><td colspan="3"><hr></td></tr>
+                    <tr>
+                        <td><label for="">Product:</label></td>
+                        <td style="padding-top: 10px;"><select name="" id="" style="width: 120px;">
+                            <option value="">ScanMaster </option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Date Purchased:</label></td>
+                        <td><input type="text" name="" id=""></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Serial#:</label></td>
+                        <td><input type="text" name="" id=""></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3"><label for="">Used for:</label></td>
+                        <td><input type="radio" name="Used for" id="">Home</td>
+                        <td><input type="radio" name="Used for" id="">Educational Institution</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="Used for" id="">Business</td>
+                        <td><input type="radio" name="Used for" id="">Other</td>
+                    </tr>
+                    <tr><td><input type="radio" name="Used for" id="">Govemment</td></tr>
+                    <tr>
+                        <td rowspan="2"><label for="">System(check all that apply):</label></td>
+                        <td><input type="checkbox" name="" id="">Windows</td>
+                        <td><input type="checkbox" name="" id="">UNIX</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="" id="">Macintosh</td>
+                        <td style="padding-bottom: 10px;"><input type="checkbox" name="" id="">Other</td>
+                    </tr>
+                    <tr><td colspan="3"><hr></td></tr>
+                    <tr>
+                        <td><label for="">Comments?:</label></td>
+                        <td colspan="2" style="padding-top: 10px;"><textarea name="" id="" cols="45" rows="6"></textarea></td>
+                    </tr>
+                </table>
+                <footer>
+                    <button>Click to register</button>
+                    <button>Click to cancel</button>
+                </footer>
+            </form>
+        </div>
     </div>
 </body>
 </html>
