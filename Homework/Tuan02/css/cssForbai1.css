@@ -1,0 +1,200 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+.frame{
+    height: 740px;
+    width: 1500px;
+    border: 1px solid;
+}
+/*Đây là css cho header*/
+header{
+    height: 41.9px;
+    width: 100%;
+    color: RGB(166,67,80);
+    font-size: 28px;
+    text-align: center;
+    padding-top: 12px;
+    font-style: italic;
+    font-weight: bold;
+    text-shadow: 7px 7px 7px;
+}
+/*-----------------------*/
+/*Đây là css cho nav-----*/
+nav{
+    height: 32px;
+    width: 100%;
+    background-color: RGB(231,149,148);
+    display: flex;
+    padding: 2px 0px;
+}
+.inputNav{
+    padding-top: 5px;
+    margin-right: 330px;
+ }
+ .iconNav{
+     margin-left: 400px;
+     border-right: 1px solid blueviolet;
+ }
+ .iconNav img{
+     height: 25px;
+     padding-top: 1px;
+     padding-right: 10px;
+     max-width: auto;
+ }
+nav ul{
+    list-style-type: none;
+    display: flex;
+}
+nav ul li{
+    padding: 7px 30px;
+    border-right: 1px solid blueviolet;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+/*-----------------------*/
+/*css cho phần chính*/
+.main{
+    height: 590px;
+    width: 100%;
+}
+/*Vùng trái của phần chính (leftArea)*/
+.leftA{
+    float:left;
+    height: 50%;
+    width: 230px;
+    padding: 5px 0px;
+} 
+.imgLeftA img{
+    height: 110px;
+    border-radius: 50%;
+    box-shadow: 8px 8px 8px pink;
+}
+.leftA ul{
+    list-style-type: none;
+}
+.leftA ul li{
+    width: 220px;
+    background-color: rgb(231,149,148);
+    height: 25px;
+    border-radius: 15px 15px;
+    margin: 5px;
+}
+.leftA ul li a{
+    text-decoration: none;
+    margin: 10px;
+    color: white;
+}
+/*Vùng phải của phần chính(rightArea)*/
+.rightA{
+    margin-top: 10px;
+    color: white;
+    float: right;
+    height: 85%;
+    width: 350px;
+    background-color: black;
+}
+.rightA a{
+    color: pink;
+}
+.headRight{
+    font-size: 25px;
+    font-weight: bold;
+}
+.imgRight{
+    margin: 40px;
+    margin-top: 10px;
+}
+.smalltext{
+    font-size: 12px;
+}
+.imgRight img{
+    height: 155px;
+    max-width: auto;
+}
+.headImg{
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+}
+/*Vùng giữa của phần chính (center)*/
+.center{
+    height: 590px;
+    width: 918px;
+    float: left;
+}
+.h1{
+    margin-top: 10px;
+    height: 30px;
+    width: 420px;
+    background-color: rgb(231,149,148);
+    font-weight: bold;
+    font-size: 25px;
+    letter-spacing: 17px;
+    color: RGB(166,67,80);
+    padding-left: 20px;
+}
+.in4{
+    margin-top: 10px;
+    height: 25px;
+    width: 420px;
+    background-color: rgb(231,149,148);
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 17px;
+    padding-left: 20px;
+    color: RGB(166,67,80);
+}
+.grid-in4{
+    display: grid;
+    grid-template-columns: 400px 400px;
+    gap: 20px;
+    margin: 10px;
+}
+.grid-in4 input{
+    width: 400px;
+    height: 35px;
+}
+.raidoCountry input{
+    width: auto;
+    height: auto;
+}
+.raidoCountry{
+    padding-right: 210px;
+}
+.grid-in4 select{
+    width: 405px;
+    height: 42px;;
+}
+.grid-in4 textarea{
+    width: 825px;
+    height: 50px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.center .butEnd input{
+    width: 50px;
+    height: 30px;
+}
+.center ul li{
+    margin-left: 40px;
+}
+.center a{
+    color: red;
+}
+/*------------------------*/
+footer{
+    float: left;
+    border-top: 1px solid rgb(166,67,80);
+    height: 39.2px;
+    width: 100%;
+    background-color: rgb(231,149,148);
+    padding-top: 20px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    font-style: italic;
+}
