@@ -1,0 +1,161 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+.container{
+    height: 700px;
+    width: 900px;
+}
+
+/*css phần header*/
+header{
+    color: white;
+    height: 153px;
+    max-width: auto;
+    background-image: url(../images/bai02/background.png);
+}
+header img{
+    margin: 8px;
+    margin-bottom: 5px;
+    height: 110px;
+    max-width: auto;
+}
+header .title{
+    display: flex;
+}
+header .textHead{
+    margin-left: 10px;
+    margin-top: 35px;
+}
+header .h1{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header .h2{
+    font-weight: bold;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+header nav{
+    height: 30px;
+    width: 100%;
+    background-color: rgb(178,174,171);
+}
+/*nav*/
+nav ul{
+    display: flex;
+    list-style-type: none;
+    margin-left: 10px;
+}
+nav ul li{
+    padding: 5px 20px;
+    margin: 0;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+}
+nav a:hover{
+    color: black;
+}
+/*----------------------------------*/
+/*section*/
+.main{
+    float: left;
+    width: 650px;
+    height: 500px;
+    color: rgb(95, 95, 95);
+}
+.main .img{
+    float: left;
+    height: 210px;
+    width: 300px;
+    border: 1px solid rgb(233, 233, 233);
+}
+.img img{
+    height: 175px;
+    width: 295px;
+    margin: 2.5px;
+}
+.main article{
+    height: 210px;
+    max-width: auto;
+    margin: 20px 6px;
+    margin-left: 20px;
+}
+.main .art2{
+    margin-top:35px;
+}
+.main .art .h1{
+    color: rgb(146, 146, 146);
+    font-size: 25px;
+    font-weight: bold;
+}
+.main .art .h2{
+    color: rgb(247, 142, 142);
+    margin-bottom: 13px;
+    font-size: 16px;
+}
+.artContent{
+    float: right;
+    height: 210px;
+    width: 305px;
+    font-size: 16px;
+    margin-left: 15px;
+    margin-top: 12px;
+    margin-right: 0px;
+}
+/*aside*/
+aside{
+    float: right;
+    width: 249px;
+    height: 500px;
+    border-left: 1px solid rgb(248, 203, 203);
+}
+aside section{
+    max-width: auto;
+    margin: 20px;
+}
+aside .s1{
+    height: 240px;
+}
+aside .s2{
+    margin-top: 30px;
+    height: 195px;
+}
+aside .h{
+    color: rgb(247, 142, 142);
+    font-weight: bold;
+    font-size: 20px;
+}
+.s1 a{
+    text-decoration: none;
+    font-size: 16.5px;
+    color: rgb(247, 142, 142);
+}
+.s1 ul{
+    list-style-type: none;
+}
+.s1 ul li{
+    padding: 13px 0px;
+    border-bottom: 1px solid rgb(248, 203, 203);
+}
+.s2 {
+    color: rgb(95, 95, 95);
+}
+.s2 .h{
+    margin-bottom: 18px;
+}
+/*footer*/
+footer{
+    float: left;
+    height: 15px;
+    width: 890px;
+    background-color:rgb(178,174,171);
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    padding-top: 12px;
+    padding-left: 10px;
+}
