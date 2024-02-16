@@ -1,0 +1,18 @@
+.content p {
+    margin-bottom: 15px;
+}
+.material-list{
+    font-size: medium;
+    background-color: rgb(255,254,241);
+    padding-right: 10px; 
+    float: right;
+    width: 43%;
+    border: 5px solid rgb(252, 192, 82);
+    border-style: outset;
+}
+.material-list ul{
+    margin-bottom: 10px;
+}
+.material-list li{
+    margin-left: 50px;
+}
