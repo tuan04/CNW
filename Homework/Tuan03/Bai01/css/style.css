@@ -1,0 +1,118 @@
+*{
+    margin:  0  auto;
+    padding: 0;
+}
+.frame{
+    color: white;
+    max-width: 950px;
+    background-color: #63b4ec;
+}
+/*header*/
+header{
+    display: flex;
+    border-bottom: 5px dotted;
+    border-color: white;
+    padding: 1px 0px;
+}
+
+header h1{
+    margin-top: 4px;
+    margin-right: 20px;
+    font-size: 30px;
+    color: white;
+    font-family: arial;
+    text-shadow: -3px -2px 7px rgb(0, 0, 160);
+}
+/*nav in header*/
+nav ul{
+    margin-left: -145px;
+    list-style-type: none;
+    display: flex;
+}
+
+nav li{
+    margin: 10px 20px;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+}
+/*center*/
+.center{
+    display: flex;
+    padding-top: 20px;
+}
+/*contents*/
+.contents{
+    width: 50%;
+    margin: 0px 10px;
+}
+.contents h2{
+    margin: 15px 0px;
+    color: white;
+}
+table #but input{
+    width: 55px;
+    border-style: dotted;
+}
+input{
+    border: 2px solid rgb(0, 0, 216);
+    border-radius: 5px;
+    width: 230px;
+}
+textarea{
+    border: 2px solid rgb(0, 0, 216);
+    border-radius: 5px;
+    width: 230px;
+    height: 90px;
+}
+select{
+    width: 50px;
+    border: 2px solid rgb(0, 0, 216);
+    border-radius: 5px;
+}
+/*form*/
+form{
+    margin: 0px 30px;
+}
+/*image*/
+.image{
+    float: right;
+    margin: 10px;
+    width: 50%;
+}
+.image img{
+    max-width: 410px;
+    height: 290px;
+}
+.text{
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-bottom: 30px;
+}
+.image {
+    color: #1b00b3;
+}
+
+.image h1{
+    text-shadow: 2px 2px;
+}
+
+.image p{
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
+/*footer*/
+footer{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background-color: #63b4ec;
+    width: 100%;
+    border-top: 5px dotted white;
+    float: left;
+    text-align: center;
+}
