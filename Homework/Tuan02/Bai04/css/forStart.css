@@ -1,0 +1,33 @@
+.back{
+    float: left;
+    font-size: 13px;
+    width: 470px;
+    height: 600px;
+    background-image: url(../images/sample.jpg);
+}
+.o1{
+    margin-top: -25px;
+    margin-right: -90px;
+    padding: 5px;
+    background-color: rgb(255,254,241);
+    width: 136px;
+    border: 3.5px solid rgb(199, 199, 199);
+    border-style: inset;
+}
+.o2{
+    padding: 5px;
+    margin-top: 130px;
+    margin-left: -10px;
+    background-color: rgb(255,254,241);
+    width: 150px;
+    border: 3.5px solid rgb(199, 199, 199);
+    border-style: inset;
+}
+.o3{
+    padding: 5px;
+    margin-right: -50px;
+    background-color: rgb(255,254,241);
+    width: 150px;
+    border: 3.5px solid rgb(199, 199, 199);
+    border-style: inset;
+}
