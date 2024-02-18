@@ -1,0 +1,155 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+.frame{
+    max-width: 950px;
+    height: 560px;
+    border: 2px solid #1c3755;
+}
+/*header*/
+.title{
+    font-family: Georgia;
+}
+header{
+    display: flex;
+    color: white;
+    background-color: #294e79;
+}
+header h1{
+    font-weight: normal;
+}
+header .title{
+    margin: 20px;
+    margin-left: -8px;
+    font-family: Georgia;
+}
+header .title p{
+    font-size: 14px;
+}
+header img{
+    max-width: 55px;
+    height: auto;
+    margin: 10px;
+    margin-left: 15px;
+}
+
+header .sec{
+    margin-top: 10px;
+    margin-right: 10px;
+}
+header .sec .search{
+    text-align: right;
+}
+.search input{
+    color: white;
+    background-color: #103258;
+}
+::-ms-input-placeholder{
+    color: white;
+}
+::placeholder{
+    color: white;
+}
+.search :nth-child(1){
+    margin-right: 10px;
+}
+
+/*nav*/
+nav ul{
+    display: flex;
+    margin-top: 25px;
+}
+nav li{
+    padding: 13px 15px;
+    margin-right: 15px; 
+    background-color: #3e72ad;
+    list-style-type: none;
+
+}
+nav a{
+    text-decoration: none;
+    color: white;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+nav :nth-child(5){
+    margin-right: 0;
+}
+/*center*/
+.center{
+    margin: 30px 10px;
+    font-family: arial;
+    font-size: 13px;
+    color: rgb(133, 133, 133);
+}
+.center h2{
+    color: rgb(133, 133, 133);
+    font-size: 18px;
+    padding-bottom: 10px;
+    margin: 10px 0px;
+    border-bottom: 2px dotted rgb(180, 180, 180);
+}
+.contents{
+    float: left;
+    width: 620px;
+    margin-right: 5px;
+}
+.contents .s1{
+    float: left;
+    width: 360px;
+}
+.contents .s1 input{
+    padding: 2px;
+}
+.contents .s1 p{
+    color: rgb(255, 106, 37);
+    text-shadow: 3px 3px 3px gray;
+    font-style: italic;
+    margin: 5px 0px;
+}
+.contents .s2{
+    margin-top: -8px;
+    float: right;
+    width: 200px;
+}
+.contents .s2 p{
+    margin: 15px 0;
+}
+.contents .s2 :nth-child(3){
+    margin-top: 50px;
+}
+.other{
+    background-color: rgb(247, 247, 247);
+    float: right;
+    width: 240px;
+    padding: 10px 20px;
+}
+.other a{
+    font-weight: bold;
+    text-decoration: none;
+    float: right;
+    margin: 10px 0;
+}
+.other img{
+    width: 100%;
+    padding: 3px 3px;
+    border: 1px solid rgb(196, 196, 196);
+}
+table{
+    margin-left: -10px;
+    border-spacing: 10px 15px;
+}
+/*footer*/
+footer{
+    margin-top: 30px;
+    padding: 8px 10px;
+    color: white;
+    font-size: small;
+    background-color: #163457;
+    float: left;
+    width: 930px;
+    text-align: left;
+}
