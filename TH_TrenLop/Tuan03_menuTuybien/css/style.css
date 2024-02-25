@@ -53,7 +53,7 @@ header nav .lv1 li{
     position: relative;
     margin: 0px 30px;
     border: 2px solid;
-    border-radius: 10px 0px 10px 0px;
+    border-radius: 10px 10px 10px 0;
     padding: 7px 15px;
 }
 header nav .lv1 a{
@@ -75,7 +75,10 @@ header nav .lv2 li{
 header nav .lv2 a{
     color: black;
 }
-header nav .lv1 :nth-child(3):hover .lv2{
+header nav .lv2 li:hover{
+    transform: rotate(10deg);
+}
+header nav .lv1 li:hover .lv2{
     display: block;
 }
 
