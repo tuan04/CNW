@@ -1,0 +1,81 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+header{
+    padding-top: 40px;
+    background-color: darkolivegreen;
+}
+.headContainer{
+    display: flex;
+    background-color: white;
+}
+.headLink{
+    margin-left: 10px;
+}
+.headContainer .headLink a{
+    display: flex;
+    text-decoration: none;
+}
+.headContainer .headLink img{
+    max-width: 120px;
+}
+.headContainer .headLink h1{
+    margin-top: 30px;
+    margin-left: 10px;
+}
+.headContainer .headTitle{
+    margin-left: -10px;
+    margin-top: 18px;
+    display: flex;
+}
+.headContainer .headTitle h2{
+    margin: 15px 12px;
+}
+.headContainer .headTitle{
+    height: 60px;
+}
+.headContainer .cart{
+    margin-right: 0;
+}
+.headContainer .cart img{
+    margin: 26px 0;
+    height: 40px;
+}
+nav{
+    padding: 5px;
+}
+header nav .lv1{
+    list-style-type: none;
+    display: flex;
+}
+header nav .lv1 li{
+    position: relative;
+    margin: 0px 30px;
+    border: 2px solid;
+    border-radius: 10px 0px 10px 0px;
+    padding: 7px 15px;
+}
+header nav .lv1 a{
+    text-decoration: none;
+    color: white;
+}
+
+header nav .lv2{
+    position: absolute;
+    display: none;
+    top: 35px;
+}
+header nav .lv2 li{
+    margin: 10px 0px;
+    width: 100px;
+    background-color: none;
+    list-style-type: none;
+}
+header nav .lv2 a{
+    color: black;
+}
+header nav .lv1 :nth-child(3):hover .lv2{
+    display: block;
+}
+
