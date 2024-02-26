@@ -7,6 +7,9 @@
     height: 561px;
     border: 2px solid #1c3755;
 }
+p{
+    text-align: justify;
+}
 /*header*/
 .title{
     font-family: Georgia;

@@ -50,6 +50,9 @@ nav a{
     width: 50%;
     margin: 0px 10px;
 }
+.contents p{
+    text-align: justify;
+}
 .contents h2{
     margin: 15px 0px;
     color: white;
