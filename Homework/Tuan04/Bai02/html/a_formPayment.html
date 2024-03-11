@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/bootstrap.min.js"></script>
+   <style>
+        body{
+            font-family: Arial;
+        }
+        .creditCard p{
+            font-weight: bold;
+            font-size: 12.5px;
+            color: gray;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container border border-info py-2 col-5">
+        <table class="table bg-info bg-opacity-10" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th class="fw-semibold fs-5">Checkout</th>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2">
+                        <table class="table table-borderless m-0">
+                            <tr>
+                                <td class="text-start">
+                                    <p class="mb-1 fw-semibold">Product 1</p>
+                                    <small class="mb-1 text-secondary">Lorem ipsum dolor sit amet</small>
+                                </td>
+                                <td  class="text-end fw-semibold">$200</td>
+                            </tr>
+                            <tr>
+                                <td  class="text-start">
+                                    <p class="mb-1 fw-semibold">Product 2</p>
+                                    <small  class="mb-1 text-secondary">Lorem ipsum dolor sit amet</small>
+                                </td>
+                                <td class="text-end fw-semibold">$120</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="fw-semibold">
+                        Total
+                    </td>
+                    <td class="fw-semibold text-end">$320</td>
+                </tr>
+            </tfoot>
+        </table>
+        
+        <div class="creditCard">
+            <div class="fs-5 fw-bold">Credit Card Details</div>
+            <hr class="mt-1">
+            <div class="row">
+                <div class="col-8 mb-3">
+                    <label for="cardHolder" class="form-label"><p class="mb-1">CARD HOLDER</p></label>
+                    <input type="text" id="cardHolder" class="form-control rounded-1" placeholder="Card Holder">
+                </div>
+                <div class="col-4">
+                    <label for="date" class="form-label"> <p class="mb-1">EXPIRATION DATE</p></label>
+                    <div class="d-flex">
+                        <input type="text" id="date" class="form-control rounded-1 me-2" placeholder="MM"> <div class="fs-4">/</div>
+                        <input type="text" id="date" class="form-control rounded-1 ms-2" placeholder="YY">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-9 mb-3">
+                    <label for="" class="form-label"><P class="mb-1">CARD NUMBER</P></label>
+                    <input type="text" class="form-control rounded-1" placeholder="Card Number">
+                </div>
+                <div class="col-3">
+                    <label for="" class="form-label"><p class="mb-1">CVC</p></label>
+                    <input type="text" class="form-control rounded-1" placeholder="CVC">
+                </div>
+            </div>
+        </div>
+        <div class="positoin-relative"><button class="btn btn-primary col-12">Proceed</button></div>
+    </div>
+</body>
+</html>

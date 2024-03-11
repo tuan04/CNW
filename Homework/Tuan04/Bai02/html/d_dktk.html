@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form class="container col-7 mt-3 p-2 was-validated" style="border: 2px solid rgb(170, 170, 170);">
+            <div class="row mb-3">
+                <div class="col">
+                    <label class="form-label" for="fNameText">First name</label>
+                    <input type="text" class="form-control" id="fNameText" placeholder="First name" required>
+                    <span class="invalid-feedback" id="checkFn">Please provide your first name.</span>
+                    <span class="valid-feedback">Looks good!</span>
+                </div>
+                <div class="col">
+                    <label class="form-label" for="lNameText">Last name</label>
+                    <input type="text" class="form-control" id="lNameText" placeholder="Last name" required>
+                    <span class="valid-feedback">Look good!</span>
+                    <span class="invalid-feedback">Please provide your last name.</span>
+                </div>
+                <div class="col">
+                    <label for="userName" class="form-label">Username</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="inputGr">@</span>
+                        <input type="text" class="form-control" placeholder="Username"  required>
+                        <span class="invalid-feedback">Please choose a username</span>
+                        <span class="valid-feedback">Looks good!</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-7">
+                    <label class="form-label" for="">City</label>
+                    <input type="text" class="form-control" placeholder="City" required> 
+                    <span class="invalid-feedback">Please provide a valid city.</span>
+                    <span class="valid-feedback">Looks good!</span>
+                </div>
+                <div class="col">
+                    <label class="form-label" for="">State</label>
+                    <input type="text" class="form-control" placeholder="State" required>
+                    <span class="invalid-feedback">Please provide a valid state.</span>
+                    <span class="valid-feedback">Looks good!</span>
+                </div>
+                <div class="col">
+                    <label for="" class="form-label">Zip</label>
+                    <input type="text" class="form-control" placeholder="Zip" required>
+                    <span class="invalid-feedback">Please provide a valid zip.</span>
+                    <span class="valid-feedback">Looks good!</span>
+                </div>
+            </div>
+            <div class="col-12 mb-3 ">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="agreeCheck" required>
+                    <label for="agreeCheck" class="form-check-label">Agree to terms and conditions</label>
+                    <span class="invalid-feedback">You must agree before submitting.</span>
+                    <span class="valid-feedback">Looks good!</span>
+                </div>
+            </div>
+            <div>
+                <input type="button" class="btn btn-primary" value="Submit form" required>
+            </div>  
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+    </div>
+    <div id="loginModal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header"><h1 class="modal-title fs-5">Login</h1></div>
+                <div class="modal-body mx-2">
+                    <div class="row">
+                        <label for="emailText" class="form-label">Email</label>
+                        <input type="text" id="emailText" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="row">
+                        <label for="passwdText" class="form-label">Password</label>
+                        <input type="text" class="form-control" id="passwdText" placeholder="Password">
+                    </div>
+                    <div class="row mb-3">
+                        <input type="button" value="Submit" class="btn btn-primary col-2">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" value="Close" class="btn btn-danger">
+                </div>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>
