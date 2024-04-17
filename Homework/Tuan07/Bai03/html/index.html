@@ -39,7 +39,7 @@
                 let phone = $("#phoneTxt").val();
                 let email = $("#emailTxt").val();
 
-            if(!(/^[A-Za-z ]*/.test(fullName) && fullName != '')){
+            if(!(/^[A-Z][a-z]+( [A-Z][a-z]+)*$/.test(fullName) && fullName != '')){
                 $("#fullNameTxt").focus();
                 return false;
             }
@@ -55,11 +55,11 @@
                 $("#rePwdTxt").focus();
                 return false;
             }
-            if(!(/\d{9,11}/.test(phone) && phone != '')){
+            if(!(/\d{9,11}/.test(phone))){
                 $("#phoneTxt").focus();
                 return false;
             }
-            if(!(/^[a-z]\w+.*\w*@(gmail|yahoo).com/.test(email) && email != '')){
+            if(!(/^[a-z]\w+\.*\w*@(gmail|yahoo)\.com/.test(email))){
                 $("#emailTxt").focus();
                 return false;
             }
