@@ -5,71 +5,267 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <script src="../js/bootstrap.min.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
-    
+    <script src="../js/jquery-3.7.1.min.js"></script>
     <style>
-        nav li{
-            margin-right: 120px;
+        .modal-body{
+            font-size: 13px;
         }
     </style>
+    <script>
+        $(document).ready(function(){
+            function checkNs(){
+                let ns = $("#nsTxt").val();
+                let ngayHT = new Date();
+                
+                let tach = ns.split('-');
+                let nam = parseInt(tach[0]);
+                let thang = parseInt(tach[1]);
+                let ngay = parseInt(tach[2]);
+
+                let tuoi = ngayHT.getFullYear() - nam;
+                if(tuoi < 15){
+                    $("#checkNs").html("Bạn chưa đủ tuổi.")
+                    $("#checkNs").css("color", "red");
+                    return false;
+                }
+                if(tuoi > 18){
+                    $("#checkNs").html("Bạn đã vượt tuổi tham gia");
+                    $("#checkNs").css("color", "red");
+                    return false;
+                }
+
+                if((tuoi == 15 && ngayHT.getMonth() - thang < 0)){
+                    $("#checkNs").html("Bạn chưa đủ tuổi.")
+                    $("#checkNs").css("color", "red");
+                    return false;
+                }
+
+                if((tuoi == 18 && ngayHT.getMonth() - thang > 0)){
+                    $("#checkNs").html("Bạn đã vượt tuổi tham gia.")
+                    $("#checkNs").css("color", "red");
+                    return false;
+                }
+
+                return true;
+            }
+
+            function validate(){
+                let hoTen = $("#hoTenTxt").val();
+                let sdt = $("#sdtTxt").val();
+                let gioiTinh = $('input[name="gioiTinh"]:checked').prop("id");
+                let ns = $("#nsTxt").val();
+                let dc = $("#dcTxt").val();
+
+                if(hoTen.trim() == ""){
+                    $("#checkTen").html("Hãy nhập họ tên");
+                    $("#checkTen").css("color","red");
+                    return false;
+                }
+                else if(!(/^[A-Z][a-z]+( [A-Z][a-z]+)+$/.test(hoTen))){
+                    $("#checkTen").html("Họ tên không hợp lệ");
+                    $("#checkTen").css("color","red");
+                    return false;
+                }
+                else{
+                    $("#checkTen").html("*");
+                    $("#checkTen").css("color","gray");
+                }
+
+                if(sdt.trim() == ""){
+                    $("#checkSdt").html("Hãy nhập số điện thoái");
+                    $("#checkSdt").css("color","red");
+                    return false;
+                }
+                else if(!(/^(03[2-9]|07[09768]|08[1-5]|05[68]|059)[0-9]{6}$/.test(sdt))){
+                    $("#checkSdt").html("Số điện thoại không hợp lệ");
+                    $("#checkSdt").css("color","red");
+                    return false;
+                }
+                else{
+                    $("#checkSdt").html("*");
+                    $("#checkSdt").css("color","gray");
+                }
+
+                if(ns == ""){
+                    $("#checkNs").html("Nhập ngày sinh.")
+                    $("#checkNs").css("color","red");
+                    return false;
+                }
+                else{
+                    if(checkNs()){
+                        $("#checkNs").html("*");
+                        $("#checkNs").css("color","gray");
+                    }
+                    else{
+                        return false;
+                    }
+                }
+
+                if(gioiTinh == null){
+                    $("#checkGt").html("Chọn giới tính.")
+                    $("#checkGt").css("color","red");
+                    return false;
+                }
+                else{
+                    $("#checkGt").html("*");
+                    $("#checkGt").css("color","gray");
+                }
+                return true;
+            }
+            $("#hoTenTxt, #sdtTxt, input[name='gioiTinh'], #nsTxt, #dcTxt, #khoaHocSelect").change(function(){
+                let kh = $("#khoaHocSelect").val();
+                $("#hocPhiTxt").val(kh.split(';')[1]);
+                validate();
+            })
+            let i = 2;
+            $("#saveBtn").click(function(){
+                if(validate()){
+                    let hoTen = $("#hoTenTxt").val();
+                    let sdt = $("#sdtTxt").val();
+                    let gioiTinh = $('input[name="gioiTinh"]:checked').prop("id");
+                    let ns = $("#nsTxt").val();
+                    let dc = $("#dcTxt").val();
+                    let kh = $("#khoaHocSelect").val();
+
+                    let tach = kh.split(';');
+                    let khoa = tach[0];
+                    let gia = tach[1];
+
+                    let tach1 = ns.split('-');
+                    let nam = parseInt(tach1[0]);
+                    let thang = parseInt(tach1[1]);
+                    let ngay = parseInt(tach1[2]);
+
+                    let newRow = "<tr> <td> " + i + "</td> <td>" +  hoTen  + "</td> <td>" + (gioiTinh == "gtnam" ? "Nam" : "Nữ") + "</td> <td>" 
+                        + sdt  + "</td> <td>" + ngay + "/" + thang + "/" + nam  + "</td> <td>" + dc + "</td> <td>" + khoa + "</td> <td>" + gia + "</td> </tr>";
+                    i++;
+                    $("#thongTinTable").append(newRow);
+                    $("#modalDk").modal('hide');
+                }
+            })
+        })
+    </script>
 </head>
 <body>
     <div class="container">
         <div>
-            <img src="../image/banner-5.png" style="width: 100%;">
+            <img src="../image/website.png" alt="" width="100%" height="300px">
         </div>
-        <nav class="navbar navbar-expand-lg bg-light">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Services
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#" id="btnModal">Register</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-              </div>
-            </div>
-          </nav>
-          <table class="table">
+        <nav class="navbar navbar-expand">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="" class="nav-link text-primary">Trang chủ</a></li>
+                <li class="nav-item"><a href="" class="nav-link text-primary" data-bs-toggle="modal" data-bs-target="#modalDk">Đăng ký</a></li>
+            </ul>
+        </nav>
+        <table class="table" id="thongTinTable"> 
             <thead>
-                <tr class="table-stripped">
+                <tr>
                     <th>STT</th>
-                    <th>Mã học viên</th>
                     <th>Họ tên</th>
+                    <th>Giới tính</th>
+                    <th>Số điện thoại</th>
+                    <th>Ngày sinh</th>
                     <th>Địa chỉ</th>
-                    <th>Tên dịch vụ</th>
-                    <th>Tiền đồ dùng</th>
-                    <th>Tổng tiền</th>
+                    <th>khóa học</th>
+                    <th>Học phí</th>
                 </tr>
             </thead>
-          </table>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Hoàng Lâm</td>
+                    <td>Nam</td>
+                    <td>090008888</td>
+                    <td>20/03/2010</td>
+                    <td>123 Nguyễn Du P5 Gò Vấp</td>
+                    <td>6 tuần</td>
+                    <td>8.000.000</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <div>
-        
+    <div class="modal fade" id="modalDk">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title fw-normal">THÔNG TIN HỌC VIÊN</h6>
+                    <span type="button" class="btn-close" data-bs-dismiss="modal"></span>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-2">
+                        <div class="col-3">
+                            <div class="form-label text-end fw-bold">Họ và tên</div>
+                        </div>
+                        <div class="col-9">
+                            <input type="text" class="form-control" style="height: 30px;" id="hoTenTxt">
+                            <label for="" id="checkTen" class="form-text">*</label>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-3">
+                            <div class="form-label text-end fw-bold">Số điện thoại</div>
+                        </div>
+                        <div class="col-9">
+                            <input type="text" class="form-control" style="height: 30px;" id="sdtTxt">
+                            <label for="" class="form-text" id="checkSdt">*</label>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-3">
+                            <div class="form-label text-end fw-bold">Ngày sinh</div>
+                        </div>
+                        <div class="col-9">
+                            <input type="date" class="form-control" style="height: 30px;" id="nsTxt">
+                            <label for="" class="form-text" id="checkNs">*</label>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-3">
+                            <div class="form-label text-end fw-bold">Giới tính</div>
+                        </div>
+                        <div class="col-9">
+                            <input type="radio" name="gioiTinh" id="gtnam">
+                            <label for="">Nam</label>
+                            <input type="radio" name="gioiTinh" id="gtnu">
+                            <label for="">Nữ</label>
+                            <label for="" class="form-text row p-0 m-0" id="checkGt">*</label>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-3">
+                            <div class="form-label text-end fw-bold">Địa chỉ</div>
+                        </div>
+                        <div class="col-9">
+                            <input type="text" class="form-control" style="height: 30px;" id="dcTxt">
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-3">
+                            <div class="form-label text-end fw-bold">Bạn muốn tham gia khóa nào?</div>
+                        </div>
+                        <div class="col-9">
+                            <select name="" id="khoaHocSelect" class="form-select" style="height: 35px;">
+                                <option value="2 tuần; 5.000.000">Khóa 2 tuần</option>
+                                <option value="4 tuần; 8.000.000">Khóa 4 tuần</option>
+                                <option value="6 tuần; 9.000.000">Khóa 6 tuần</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-3">
+                            <div class="form-label text-end fw-bold">Học phí</div>
+                        </div>
+                        <div class="col-9">
+                            <input type="text" class="form-control" style="height: 30px;" id="hocPhiTxt" disabled>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-success" style="height: 35px;" id="saveBtn">Lưu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

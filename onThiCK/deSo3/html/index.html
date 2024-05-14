@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            function checkNgayKham(ngayKham){
+                let nowDate = new Date();
+                let ngayHT = nowDate.getDate();
+                let thangHT = nowDate.getMonth() + 1;
+                let namHT = nowDate.getFullYear();
+
+                let tachChuoi = ngayKham.split('-');
+                let ngay = parseInt(tachChuoi[2]);
+                let thang = parseInt(tachChuoi[1]);
+                let nam = parseInt(tachChuoi[0]);
+
+                if(nam - namHT < 0){
+                    return false;
+                }
+                if((nam - namHT) == 0 && (thang - thangHT) < 0){
+                    return false;
+                }
+                if((nam - namHT) == 0 && (thang - thangHT) == 0 && (ngay - ngayHT) <= 0){
+                    return false;
+                }
+                return true;
+            }
+            function validate(){
+                let maBN = $("#maBNTxt").val();
+                let theBH = $("#imgFileChoose").val();
+                let ngayKham = $("#ngayKham").val();
+                
+                if(maBN == ""){
+                    $("#checkMaBN").html("Hãy nhập mã bệnh nhân");
+                    $("#checkMaBN").css("color", "red");
+                    return false;
+                }
+                else if(!(/^BN-[0-9]{5}$/.test(maBN))){
+                    $("#checkMaBN").html("Mã bệnh nhân không đúng định dạng. VD: BN-12345");
+                    $("#checkMaBN").css("color", "red");
+                    return false;
+                }
+                else{
+                    $("#checkMaBN").html("*");
+                    $("#checkMaBN").css("color", "gray");
+                }
+
+                if(theBH == ""){
+                    $("#checkImgFile").html("Hãy chọn thẻ bảo hiểm");
+                    $("#checkImgFile").css("color", "red");
+                    return false;
+                }
+                else if(!(/(.jpg|.png|.gif)$/.test(theBH))){
+                    $("#checkImgFile").html("Định dạng không đúng file ảnh.");
+                    $("#checkImgFile").css("color", "red");
+                    return false;
+                }
+                else{
+                    $("#checkImgFile").html("*");
+                    $("#checkImgFile").css("color", "gray");
+                }
+
+                if(ngayKham == ""){
+                    $("#checkNgayKham").html("Hãy nhập ngày khám");
+                    $("#checkNgayKham").css("color", "red");
+                    return false;
+                }
+                else{
+                    if(checkNgayKham(ngayKham)){
+                        $("#checkNgayKham").html("*");
+                        $("#checkNgayKham").css("color", "gray");
+                    }
+                    else{
+                        $("#checkNgayKham").html("Ngày khám phải sau ngày hiện tại");
+                        $("#checkNgayKham").css("color", "red");
+                        return false;
+                    }
+                }
+                return true;
+            }
+            $("#maBNTxt, #imgFileChoose, #ngayKham, #theoyc, #ngoaitru, #bsyc").change(function(){
+                validate();
+                let thanhTien = 0;
+                let theoyc = $("input[id='theoyc']:checked").val();
+                let  ngoaiTru = $("input[id='ngoaitru']:checked").val();
+                let  bsyc = $("input[id='bsyc']:checked").val();
+
+                if(theoyc){
+                    thanhTien += parseInt(theoyc.split(':')[1]);
+                }
+                if(ngoaiTru){
+                    thanhTien += parseInt(ngoaiTru.split(':')[1]);
+                }
+                if(bsyc){
+                    thanhTien += parseInt(bsyc.split(':')[1]);
+                }
+                $("#thanhTienTxt").val(thanhTien);
+            })
+            let i = 2;
+            $("#datLichBtn").click(function(){
+                let maBN = $("#maBNTxt").val();
+                let theBH = $("#imgFileChoose")[0].files[0];
+                let tachNgay = $("#ngayKham").val().split('-');
+                let ngayKham = tachNgay[2]+"/"+tachNgay[1]+"/"+tachNgay[0];
+                let thanhTien = $("#thanhTienTxt").val();
+                let chuyenKhoa = $("#chuyenKhoaSelect").val();
+
+                if(validate()){
+                    let reader = new FileReader();
+                    reader.onload = function(){
+                        let url = reader.result;
+                        let newRow = "<tr><td>" + i++ + "</td><td>" + maBN + "</td><td>" + "<img src='" + url + "' style='width: 60px; height: 80px'>" + "</td><td>" + ngayKham + "</td><td>"+ 
+                            "" + "</td><td>" + thanhTien + "</td><td>" + chuyenKhoa +   "</td></tr>";
+                        $("#thongTinTable").append(newRow);
+                        $("#datLichModal").modal('hide');
+                    }
+                    reader.readAsDataURL(theBH);
+                }
+                else{
+                    alert("Thông tin không hợp lệ");
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row m-0">
+            <img src="../img/image1.png" class="rounded-bottom p-0" width="100%" height="280px">
+        </div>
+        <nav class="navbar navbar-expand" style="background-color: rgb(248, 248, 248);">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="#" class="nav-link text-primary">Trang chủ</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-primary" data-bs-toggle="modal" data-bs-target="#datLichModal">Đặt lịch</a></li>
+            </ul>
+        </nav>
+        <table class="table table-bordered" id="thongTinTable">
+            <tr>
+                <th>STT</th>
+                <th>Mã bệnh nhân</th>
+                <th>Thẻ bảo hiểm</th>
+                <th>Ngày đăng ký khám</th>
+                <th>Loại dịch vụ</th>
+                <th>Tổng thành tiền dịch vụ</th>
+                <th>Chuyên khoa</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>BN-12345</td>
+                <td><img src="../img/image.png" alt="" width="60px" height="80px"></td>
+                <td>20/4/2024</td>
+                <td>Khám theo yêu cầu, Điều trị ngoại trú</td>
+                <td>1000000</td>
+                <td>Ngoại tổng quát</td>
+            </tr>
+        </table>
+    </div>
+    <div class="modal fade" id="datLichModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">ĐẶT LỊCH KHÁM BỆNH TRỰC TUYẾN</h4>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="mmodal-body">
+                    <div class="row mb-2 mx-3">
+                        <label for="" class="form-label p-0">Mã bệnh nhân</label>
+                        <input type="text" id="maBNTxt" class="form-control">
+                        <label for="" class="form-text p-0" id="checkMaBN">*</label>
+                    </div>
+                    <div class="row mb-2 mx-3">
+                        <label for="" class="form-label p-0">Hình thẻ bảo hiểm</label>
+                        <input type="file" id="imgFileChoose" class="form-control">
+                        <label for="" class="form-text p-0" id="checkImgFile">*</label>
+                    </div>
+                    <div class="row mb-2 mx-3">
+                        <label for="" class="form-label p-0">Ngày khám</label>
+                        <input type="date" id="ngayKham" class="form-control">
+                        <label for="" class="form-text p-0" id="checkNgayKham">*</label>
+                    </div>
+                    <div class="row mb-2 mx-3">
+                        <label for="" class="form-label p-0">Loại dịch vụ</label>
+                        <div class="form-check col-auto">
+                            <input type="checkbox" value="Khám theo yêu cầu:400000" id="theoyc" class="form-check-input">
+                            <label for="" class="form-check-label">Khám theo yêu cầu</label>
+                        </div>
+                        <div class="form-check col-auto">
+                            <input type="checkbox" id="ngoaitru" value="Điều trị ngoại trú:600000" class="form-check-input">
+                            <label for="" class="form-check-label">Điều trị ngoại trú</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="bsyc" value="Bác sĩ theo yêu cầu:500000" class="form-check-input">
+                            <label for="" class="form-check-label">Bác sĩ theo yêu cầu</label>
+                        </div>
+                        <label for="" class="form-text p-0" id="checkDichVu">*</label>
+                    </div>
+                    <div class="row mb-2 mx-3">
+                        <label for="" class="form-label p-0">Tổng thành tiền dịch vụ</label>
+                        <input type="text" id="thanhTienTxt" class="form-control" disabled>
+                    </div>
+                    <div class="row mb-2 mx-3">
+                        <label for="" class="form-label p-0">Chuyên khoa</label>
+                        <select name="" class="form-select" id="chuyenKhoaSelect">
+                            <option value="Nhi">Nhi</option>
+                            <option value="Ngoại tổng quát">Ngoại tổng quát</option>
+                            <option value="Phụ sản">Phụ sản</option>
+                        </select>
+                    </div>
+                    <div class="row mb-2 mx-3">
+                        <button class="btn btn-primary col-3" id="datLichBtn">Đặt lịch</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
